@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1" />
+        <title>CRUD Servlet</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script>
+			function validateForm(){
+				var x=document.forms["myForm"]["name"];
+				var y=document.forms["myForm"]["dept"];
+				if(x.value==""){
+					alert("Name must be filled");
+					x.focus();
+					return false;
+				}
+				if(y.value==""){
+					alert("Dept must be filled");
+					y.focus();
+					return false;
+				}
+				return true
+			}
+		</script>
+    </head>
+    <body>
+        <h1>Add Employee</h1>
+        <form action="CreateServlet" method="post" id="myForm" onsubmit="return validateForm()">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name" /></td>
+                </tr>
+                <tr>
+                    <td>Dept:</td>
+                    <td><input type="text" name="dept"  /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Save" /></td>
+                </tr>
+            </table>
+        </form>
+        <br />
+        <a href="ViewSevlet">view employees</a>
+        
+    </body>
+</html>
